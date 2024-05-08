@@ -55,14 +55,14 @@ class Maquina:  # Define una clase llamada 'Maquina'.
                 self.ui.win_angulo_texto = random.randint(-4, 4)
 
     def input(self):  # Define el método 'input' de la clase.
-        for event in pygame.event.get():
-            if event.type == pygame.KEYUP:
-                if event.key == pygame.K_SPACE and self.puede_tirar and self.curr_jugador.balance >= self.curr_jugador.tamaño_apuesta:  # Si la tecla espacio está siendo presionada...
-                    self.tirada()  # Llama al método 'tirada'.
-                    self.tiempo_tirada = pygame.time.get_ticks()  # Obtiene el tiempo actual en milisegundos desde que se inicializó Pygame.
-                    self.curr_jugador.poner_apuesta()
-                    self.balance_maquina += self.curr_jugador.tamaño_apuesta
-                    self.curr_jugador.ultimo_pago = None
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_SPACE] and self.puede_tirar and self.curr_jugador.balance >= self.curr_jugador.tamaño_apuesta:  # Si la tecla espacio está siendo presionada...
+            self.tirada()  # Llama al método 'tirada'.
+            self.tiempo_tirada = pygame.time.get_ticks()  # Obtiene el tiempo actual en milisegundos desde que se inicializó Pygame.
+            self.curr_jugador.poner_apuesta()
+            self.balance_maquina += self.curr_jugador.tamaño_apuesta
+            self.curr_jugador.ultimo_pago = None
 
     def dibujar_carrete(self, tiempo_delta):  # Define el método 'dibujar_carrete' de la clase.
         for carrete in self.lista_carretes:  # Recorre todos los carretes en la lista de carretes.
@@ -102,13 +102,13 @@ class Maquina:  # Define una clase llamada 'Maquina'.
         hits = {}
         horizontal = flip_horizontal(resultado)
         for fila in horizontal:
+            simbolos_iguales = []
             for simbolo in fila:
-                if fila.count(simbolo) > 2:
+                if fila.count(simbolo) > 2 and simbolo not in simbolos_iguales:
                     posible_win = [idx for idx, val in enumerate(fila) if simbolo == val]
-
-                    # Checkea una posible win  para una  subsecuencia mas larga que 2 y lo añade a hits
                     if len(secuencia_larga(posible_win)) >= 3:
                         hits[horizontal.index(fila) + 1] = [simbolo, secuencia_larga(posible_win)]
+                        simbolos_iguales.append(simbolo)
         if hits:
             self.puede_animacion = True
             return hits
