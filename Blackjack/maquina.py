@@ -8,7 +8,8 @@ class MaquinaBlackjack:
         self.pantalla = pantalla
         self.mano_jugador = []
         self.mano_crupier = []
-        self.interfaz = Interfaz(pantalla)  # Creamos una instancia de la clase Interfaz
+        self.saldo = 10
+        self.interfaz = Interfaz(pantalla, self.saldo)  # Creamos una instancia de la clase Interfaz
         self.pedir_carta_jugador = False
         self.carta_oculta = True
 
@@ -57,7 +58,7 @@ class MaquinaBlackjack:
         # Mostrar la mano del crupier (ocultando la segunda carta)
         for i, carta in enumerate(self.mano_crupier):
             if i == 0 and self.carta_oculta:
-                imagen_carta = pygame.image.load("Proyecto/carta_oculta.png")  # Carta oculta del crupier
+                imagen_carta = pygame.image.load("Proyecto/carta_oculta1.png")  # Carta oculta del crupier
             else:
                 imagen_carta = pygame.image.load(f"Proyecto/{carta[0]}_{carta[1]}.png")
             self.pantalla.blit(imagen_carta, (x_crupier + i * 100, y_crupier))
@@ -68,7 +69,9 @@ class MaquinaBlackjack:
         puntuacion_jugador = self.calcular_puntuacion(self.mano_jugador)
         puntuacion_crupier = self.calcular_puntuacion(self.mano_crupier)
 
-        if puntuacion_jugador > 21:
+        if puntuacion_jugador == 21:
+            resultado = 'BLACKJACK'
+        elif puntuacion_jugador > 21:
             resultado = 'Has perdido'
         elif puntuacion_crupier > 21:
             resultado = 'Has ganado'
@@ -121,9 +124,33 @@ class MaquinaBlackjack:
         return opcion
 
 
+    def gestion_apuesta(self):
+        seguir = True
+        apuesta = 0
+        self.interfaz.mostrar_saldo()
+        self.interfaz.draw_apuesta()
+        self.interfaz.mostrar_apuesta(apuesta)
+        while seguir:
+            cantidad = self.interfaz.handle_apuestas()
+            if cantidad == False:
+                seguir = False
+                self.interfaz.limpiar_elementos()
+            elif cantidad in [1,5,10,25,50,100]:
+                apuesta += cantidad
+                self.interfaz.limpiar_elementos()
+                self.interfaz.mostrar_saldo()
+                self.interfaz.draw_apuesta()
+                self.interfaz.mostrar_apuesta(apuesta)
+
+        return apuesta
+
+
+
     def main_blackjack(self):
         juego = True
         while juego:
+            apuesta = self.gestion_apuesta()
+            self.interfaz.mostrar_saldo()
             self.interfaz.draw_buttons()
             for i in range(2):
                 self.pedir_carta(self.mano_jugador)
@@ -132,12 +159,19 @@ class MaquinaBlackjack:
             self.mostrar_mano()
 
             self.turno_jugador()
-
-            self.turno_crupier()
+            if self.calcular_puntuacion(self.mano_jugador) < 21:
+                self.turno_crupier()
 
             resultado = self.comparar_mano()
 
             self.interfaz.mostrar_resultado(resultado)
+
+            if resultado == 'BLACKJACK':
+                self.saldo += 2 * apuesta
+            elif resultado == 'Has ganado':
+                self.saldo += apuesta
+            elif resultado == 'Has perdido':
+                self.saldo -= apuesta
 
             self.interfaz.draw_play()
 
