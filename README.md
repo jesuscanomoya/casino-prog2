@@ -6,11 +6,11 @@
 
 
 # 💻 Integrantes:
-- **Jesus**
-- **Dennis**
-- **Jose Francisco**
-- **Marcos**
-- **Izan**
+- **[Jesus](https://github.com/jesuscanomoya)**
+- **[Dennis](https://github.com/Dennisgs05)**
+- **[Jose Francisco](https://github.com/Jose21172)**
+- **[Marcos]()**
+- **[Izan]()**
 
 # 🎰 Funcionalidades del proyecto
 
