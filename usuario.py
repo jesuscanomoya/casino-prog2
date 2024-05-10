@@ -1,5 +1,6 @@
 import sqlite3
 from hashlib import sha256
+from ventana import *
 
 
 class Usuario:
@@ -16,6 +17,8 @@ class Usuario:
     def guardar_en_bd(self):
         conn = sqlite3.connect('usuarios.db')
         cursor = conn.cursor()
+        print(self.dni, self.nombre, self.apellidos, self.contrasena)
+
         try:
             cursor.execute('INSERT INTO usuarios (dni, nombre, apellidos, contraseña) VALUES (?, ?, ?, ?)',
                            (self.dni, self.nombre, self.apellidos, self.contrasena))
@@ -35,8 +38,10 @@ class Usuario:
         hashed_password = sha256(contrasena.encode('utf-8')).hexdigest()
         cursor.execute('SELECT * FROM usuarios WHERE dni = ? AND contraseña = ?', (dni, hashed_password))
         user = cursor.fetchone()
+        print(user)
         conn.close()
         if user:
+            print("Usuario registrado exitosamente!")
             return True
         else:
             return False

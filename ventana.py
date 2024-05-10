@@ -3,6 +3,7 @@ import keyboard
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
+from usuario import *
 
 # Cuando escribí esto, solo Dios y yo entendíamos lo que estaba haciendo
 # Ahora ya solo lo sabe Dios.
@@ -22,6 +23,8 @@ class MainApp(QMainWindow):
         self.fondo.setGeometry(-30, -70, 1024, 1024)  # Su posición
         self.fondo.setPixmap(QPixmap('Imagenes/fondo_inicio_sesion.jpeg'))  # Imagen de fondo
 
+
+
         # Donde se va a meter visualmente las demás etiquetas
         self.label_menu = QLabel(self.titulo,parent= self)  # Creamos una etiqueta
         self.label_menu.setGeometry(230, 140, 371, 481)  # Su posición
@@ -31,10 +34,10 @@ class MainApp(QMainWindow):
         )  # Propiedades para que quede bonito
         self.label_menu.setFont(QFont('MS Sans Serif', 20))  # Fuente de la letra
 
-        # Etiqueta de usuario
-        self.user_label = QLabel(text="Usuario", parent=self)
-        self.user_label.setGeometry(280, 250, 231, 41)
-        self.user_label.setFont(QFont('MS Shell Dlg 2', 10))
+        # Etiqueta de DNI
+        self.dni_label = QLabel(text="DNI", parent=self)
+        self.dni_label.setGeometry(280, 250, 231, 41)
+        self.dni_label.setFont(QFont('MS Shell Dlg 2', 10))
 
         # Etiqueta de la contraseña
         self.password_label = QLabel("Contraseña", self)
@@ -62,9 +65,10 @@ class MainApp(QMainWindow):
         self.no_accounts_button.clicked.connect(self.pasar_a_registro)
 
         # ----------------Entradas de texto------------------#
-        # Escribir tu nombre
-        self.line_username = QLineEdit(self)
-        self.line_username.setGeometry(280, 300, 231, 41)
+        # Escribir tu DNI
+
+        self.line_DNI = QLineEdit(self)
+        self.line_DNI.setGeometry(280, 300, 231, 41)
 
         # Escribir contraseña
         self.line_password = QLineEdit(self)
@@ -75,7 +79,11 @@ class MainApp(QMainWindow):
             # Cambiamos las posiciones para que quede bonito
             self.label_menu.setGeometry(230, 140, 371, 600)
 
+            self.user_label = QLabel(text="Usuario", parent=self)
             self.user_label.setGeometry(280, 250, 231, 41)
+            self.user_label.setFont(QFont('MS Shell Dlg 2', 10))
+
+            self.line_username = QLineEdit(self)
             self.line_username.setGeometry(280, 300, 231, 30)
 
             # Creamos nuevas etiquetas y entradas de texto
@@ -85,10 +93,8 @@ class MainApp(QMainWindow):
             self.line_apellido = QLineEdit(self)
             self.line_apellido.setGeometry(280, 400, 231, 30)
 
-            self.dni_label = QLabel(text="DNI", parent=self)
             self.dni_label.setGeometry(280, 450, 231, 41)
-            self.dni_label.setFont(QFont('MS Shell Dlg 2', 10))
-            self.line_DNI = QLineEdit(self)
+
             self.line_DNI.setGeometry(280, 500, 231, 30)
 
             self.password_label.setGeometry(280, 550, 231, 41)
@@ -106,18 +112,27 @@ class MainApp(QMainWindow):
         self.hide()
     ''''Esto es para que no se metan nombres, apellidos, etc con valores como NULL o cosas así'''
     def verificar_usuario_log_in(self):
-        if self.line_username.text() == '' or self.line_password.text() == '':
+        if self.line_DNI.text() == '' or self.line_password.text() == '':
             self.error_line.show()
         else:
-            nombre,contrasenya =self.line_username.text(), self.line_password.text()
-            print(f'Nombre: {nombre}\nContraseña: {contrasenya}')
+            DNI,contrasenya =self.line_DNI.text(), self.line_password.text()
+            print(f'DNI: {DNI}\nContraseña: {contrasenya}')
+            if not Usuario.login(DNI, contrasenya):
+                self.error_line.show()
+
+
+
 
     def verificar_usuario_register(self):
         if self.line_username.text() == '' or self.line_password.text() == '' or self.line_apellido.text() == '' or self.line_DNI == '':
             self.error_line.show()
         else:
-            nombre,contrasenya,apellidos,DNI =self.line_username.text(), self.line_password.text(),self.line_apellido.text(),self.line_DNI
+            nombre,contrasenya,apellidos,DNI =self.line_username.text(), self.line_password.text(),self.line_apellido.text(),self.line_DNI.text()
             print(f'Nombre: {nombre}\nApellidos: {apellidos}\nDNI: {DNI}\nContraseña: {contrasenya}')
+            user = Usuario(DNI, nombre, apellidos, contrasenya)
+            user.guardar_en_bd()
+            self.hide()
+
 
 
 if __name__ == '__main__':
