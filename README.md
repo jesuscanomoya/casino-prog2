@@ -5,7 +5,7 @@
 [//]: # (*[Integrantes]&#40;#🔨Funcionalidades del proyecto&#41;)
 
 
-# 💻 Integrantes:
+# 🧑‍💻 Integrantes:
 - **[Jesus](https://github.com/jesuscanomoya)** `(Coordinador)`
 - **[Dennis](https://github.com/Dennisgs05)**
 - **[Jose Francisco](https://github.com/Jose21172)**
