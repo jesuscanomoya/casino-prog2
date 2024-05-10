@@ -40,6 +40,15 @@ class UI:
             win_rect = win_surface.get_rect(center = (x1, y1))
             self.display_surface.blit(win_surface, win_rect)
 
+    def aumentar_apuesta(self):
+        self.jugador.tamaño_apuesta += 10
+
+    def diminuir_apuesta(self):
+        self.jugador.tamaño_apuesta -= 10
+
+    def ajustar_apuesta(self):
+        self.jugador.tamaño_apuesta = self.jugador.balance
+
 
     def actualizar(self):
         pygame.draw.rect(self.display_surface, "Black", pygame.Rect(0, 900, 1600, 100))

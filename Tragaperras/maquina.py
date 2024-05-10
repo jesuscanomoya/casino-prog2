@@ -1,9 +1,11 @@
+import pygame
+
 from jugador import Jugador
 from carretes import *  # Importa todas las variables y funciones del módulo 'carretes'.
 from ajustes import *  # Importa todas las variables y funciones del módulo 'ajustes'.
 from wins import *
 from ui import UI
-
+import time
 
 class Maquina:  # Define una clase llamada 'Maquina'.
     def __init__(self):  # Define el método inicializador de la clase.
@@ -34,6 +36,9 @@ class Maquina:  # Define una clase llamada 'Maquina'.
         self.sonido_fila_5 = pygame.mixer.Sound("Sonidos/win_5.mp3")
         self.sonido_fila_5.set_volume(0.9)
 
+        self.velocidad_cambio = 0.1  # Ajusta la velocidad de cambio aquí (en segundos)
+        self.ultimo_cambio_tiempo = 0
+
     def enfriamiento(self):  # Define el método 'enfriamiento' de la clase.
         for carrete in self.lista_carretes:  # Recorre todos los carretes en la lista de carretes.
             if self.lista_carretes[carrete].carrete_girando:  # Si el carrete actual está girando...
@@ -63,6 +68,27 @@ class Maquina:  # Define una clase llamada 'Maquina'.
             self.curr_jugador.poner_apuesta()
             self.balance_maquina += self.curr_jugador.tamaño_apuesta
             self.curr_jugador.ultimo_pago = None
+
+        elif keys[pygame.K_SPACE] and self.puede_tirar and self.curr_jugador.balance < self.curr_jugador.tamaño_apuesta:
+            self.ui.ajustar_apuesta()
+            self.tirada()  # Llama al método 'tirada'.
+            self.tiempo_tirada = pygame.time.get_ticks()  # Obtiene el tiempo actual en milisegundos desde que se inicializó Pygame.
+            self.curr_jugador.poner_apuesta()
+            self.balance_maquina += self.curr_jugador.tamaño_apuesta
+            self.curr_jugador.ultimo_pago = None
+
+        elif keys[pygame.K_UP] and self.puede_tirar and self.curr_jugador.balance > self.curr_jugador.tamaño_apuesta:
+            if time.time() - self.ultimo_cambio_tiempo > self.velocidad_cambio:
+                self.ui.aumentar_apuesta()
+                self.ultimo_cambio_tiempo = time.time()
+
+        elif keys[pygame.K_DOWN] and self.puede_tirar and self.curr_jugador.balance > self.curr_jugador.tamaño_apuesta:
+            if time.time() - self.ultimo_cambio_tiempo > self.velocidad_cambio:
+                self.ui.diminuir_apuesta()
+                self.ultimo_cambio_tiempo = time.time()
+
+
+
 
     def dibujar_carrete(self, tiempo_delta):  # Define el método 'dibujar_carrete' de la clase.
         for carrete in self.lista_carretes:  # Recorre todos los carretes en la lista de carretes.
