@@ -6,7 +6,7 @@
 
 
 # 💻 Integrantes:
-- **[Jesus](https://github.com/jesuscanomoya)**
+- **[Jesus](https://github.com/jesuscanomoya)** `(Coordinador)`
 - **[Dennis](https://github.com/Dennisgs05)**
 - **[Jose Francisco](https://github.com/Jose21172)**
 - **[Marcos]()**
@@ -14,7 +14,7 @@
 
 # 🎰 Funcionalidades del proyecto
 
-- `Registro`: descripción de la funcionalidad 1-
+- `Registro`: Permite al usuario poder registrarse e iniciar sesión en nuestro casino.
 - `Funcionalidad 2`: descripción de la funcionalidad 2-
 - `Funcionalidad 2a`: descripción de la funcionalidade 2a relacionada con la funcionalidad 2-
 - `Funcionalidad 3`: descripción de la funcionalidad 3
