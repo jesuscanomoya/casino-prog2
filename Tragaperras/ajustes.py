@@ -18,11 +18,11 @@ color_boton = "White"
 
 # Simbolos
 simbolos = {
-    "C++": f"{camino_simbolos}/C++.png",
-    "JavaScript": f"{camino_simbolos}/JavaScript.png",
-    "Python": f"{camino_simbolos}/Python.png",
-    "Sql": f"{camino_simbolos}/Sql.png",
-    "Swift": f"{camino_simbolos}/Swift.png"
+    "C++": f"{camino_simbolos}/Cereza.png",
+    "JavaScript": f"{camino_simbolos}/sietes.png",
+    "Python": f"{camino_simbolos}/limon.png",
+    "Sql": f"{camino_simbolos}/melocoton.png",
+    "Swift": f"{camino_simbolos}/platano.png"
 }
 
 

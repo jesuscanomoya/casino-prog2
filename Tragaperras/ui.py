@@ -51,7 +51,8 @@ class UI:
 
 
     def actualizar(self):
-        pygame.draw.rect(self.display_surface, "Black", pygame.Rect(0, 900, 1600, 100))
+        pygame.draw.rect(self.display_surface, "Black", pygame.Rect(0, 870, 1900, 300))
+        pygame.draw.rect(self.display_surface, "Black", pygame.Rect(0, -240, 1900, 300))
         self.mostrar_info()
 
 
