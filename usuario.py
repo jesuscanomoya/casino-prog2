@@ -1,6 +1,6 @@
 import sqlite3
 from hashlib import sha256
-from ventana import *
+# from ventana import *
 
 
 class Usuario:
@@ -39,11 +39,14 @@ class Usuario:
         cursor.execute('SELECT * FROM usuarios WHERE dni = ? AND contraseña = ?', (dni, hashed_password))
         user = cursor.fetchone()
         print(user)
-        conn.close()
         if user:
+            cursor.execute('SELECT dinero FROM usuarios WHERE dni = ?', (user[0],))
+            dinero = cursor.fetchone()[0]
+            conn.close()
             print("Usuario registrado exitosamente!")
-            return True
+            return user[0], dinero
         else:
+            conn.close()
             return False
 
     @staticmethod
@@ -70,5 +73,18 @@ class Usuario:
             print("Usuario dado de baja correctamente.")
         except Exception as e:
             print("Error al dar de baja:", e)
+        finally:
+            conn.close()
+
+    @staticmethod
+    def actualizar_dinero(dni, dinero):
+        conn = sqlite3.connect('usuarios.db')
+        cursor = conn.cursor()
+        try:
+            cursor.execute('UPDATE usuarios SET dinero = ? WHERE dni = ?', (dinero, dni))
+            conn.commit()
+            print("Capital actualizado correctamente.")
+        except Exception as e:
+            print("Error al actualizar el capital:", e)
         finally:
             conn.close()
