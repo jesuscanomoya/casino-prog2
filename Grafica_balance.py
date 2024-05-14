@@ -5,23 +5,25 @@ from PyQt5.QtCore import *
 import numpy as np
 import sqlite3
 
+
 class Grafica_balance(QMainWindow):
-    def __init__(self,parent=None, *args):
+    def __init__(self, dni, parent=None, *args):
         super(Grafica_balance, self).__init__(parent=parent)
         self.setWindowTitle('Casino')  # Título de página
         self.setWindowIcon(QIcon('Imagenes/icon.jpg'))  # Icono de ventana
         self.setFixedSize(900, 800)  # Tamaño
+        self.clave = dni
         conn = sqlite3.connect('hist_bal.db')
         cursor = conn.cursor()
 
-        cursor.execute('SELECT dinero FROM hist_bal WHERE dni = 257 ',)
+        cursor.execute('SELECT dinero FROM hist_bal WHERE dni = ?', (str(self.clave),))
         user = cursor.fetchall()
-        a= ([i[0] for i in user])
+        a = ([i[0] for i in user])
         print(a)
         conn.close()
-        lista_aux=[]
+        lista_aux = []
         # Data for plotting
-        for i in range(0,len(a)):
+        for i in range(0, len(a)):
             lista_aux.append(i)
 
         fig, ax = plt.subplots()
@@ -39,19 +41,9 @@ class Grafica_balance(QMainWindow):
         self.fondo.setPixmap(QPixmap('Imagenes/hist_bal.png'))  # Imagen de fondo
 
 
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
     app = QApplication([])
-    grafico = Grafica_balance()
-
+    grafico = Grafica_balance(257)
 
     grafico.show()
     app.exec_()
-
