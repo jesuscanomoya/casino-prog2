@@ -14,7 +14,7 @@ class Grafica_balance(QMainWindow):
         conn = sqlite3.connect('hist_bal.db')
         cursor = conn.cursor()
 
-        cursor.execute('SELECT dinero FROM hist_bal WHERE dni = 257 ',)
+        cursor.execute('SELECT dinero FROM hist_bal WHERE dni = ?', (str(self.clave),))
         user = cursor.fetchall()
         a= ([i[0] for i in user])
         print(a)
