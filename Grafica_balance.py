@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 import numpy as np
 import sqlite3
-
+import time
 
 class Grafica_balance(QMainWindow):
     def __init__(self, dni, parent=None, *args):
@@ -39,6 +39,23 @@ class Grafica_balance(QMainWindow):
         self.fondo = QLabel(self)  # Creamos una etiqueta que va a ser el fondo de la ventana
         self.fondo.setGeometry(-30, -70, 1024, 1024)  # Su posición
         self.fondo.setPixmap(QPixmap('Imagenes/hist_bal.png'))  # Imagen de fondo
+
+    @staticmethod
+    def meter_datos_bd(DNI, dinero):
+        conn = sqlite3.connect('hist_bal.db')
+        cursor = conn.cursor()
+
+        try:
+            cursor.execute('INSERT INTO hist_bal (dni, dinero, tiempo) VALUES (?, ?, ?)',
+                           (DNI, dinero, time.time()))
+            conn.commit()
+            print("Todo sucedió bien")
+        except sqlite3.IntegrityError:
+            print("Esto no debería pasar")
+        except sqlite3.OperationalError as e:
+            print("Error operacional:", e)
+        finally:
+            conn.close()
 
 
 if __name__ == '__main__':

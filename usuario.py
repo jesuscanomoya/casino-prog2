@@ -1,7 +1,7 @@
 import sqlite3
 from hashlib import sha256
 from ventana import *
-
+from Grafica_balance import *
 
 class Usuario:
     def __init__(self, dni, nombre, apellidos, contrasena):
@@ -30,6 +30,8 @@ class Usuario:
             print("Error operacional:", e)
         finally:
             conn.close()
+        print("hola")
+        Grafica_balance.meter_datos_bd(self.dni, 10)
 
     @staticmethod
     def login(dni, contrasena):
