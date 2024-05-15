@@ -1,18 +1,59 @@
-from jugador import Jugador
-from ajustes import *
-import pygame, random
+from jugador import Jugador  # Importa la clase 'Jugador' del módulo 'jugador'.
+from ajustes import *  # Importa todas las variables y funciones del módulo 'ajustes'.
+import pygame, random  # Importa los módulos 'pygame' y 'random'.
 
+class UI:  # Define una clase llamada 'UI'.
+    """
+    Clase UI: Gestiona la interfaz de usuario del juego.
 
-class UI:
-    def __init__(self, jugador):
+    Atributos
+    ---------
+    jugador : Jugador
+        Una instancia de la clase 'Jugador'.
+    display_surface : pygame.Surface
+        La superficie actual de la pantalla.
+    fuente : pygame.font.Font
+        La fuente del texto de la interfaz de usuario.
+    fuente_apuesta : pygame.font.Font
+        La fuente del texto de la apuesta.
+    win_fuente : pygame.font.Font
+        La fuente del texto de victoria.
+    win_angulo_texto : int
+        El ángulo del texto de victoria.
+
+    Métodos
+    -------
+    mostrar_info()
+        Muestra la información del jugador en la pantalla.
+    aumentar_apuesta()
+        Aumenta la apuesta del jugador.
+    diminuir_apuesta()
+        Disminuye la apuesta del jugador.
+    ajustar_apuesta()
+        Ajusta la apuesta del jugador al balance del jugador.
+    actualizar()
+        Actualiza la interfaz de usuario.
+    """
+
+    def __init__(self, jugador):  # Define el método inicializador de la clase.
+        """
+        Parámetros
+        ----------
+        jugador : Jugador
+            Una instancia de la clase 'Jugador'.
+        """
         self.jugador = jugador
         self.display_surface = pygame.display.get_surface()
         self.fuente, self.fuente_apuesta = pygame.font.Font(ui_fuente, ui_tamaño_fuente), pygame.font.Font(ui_fuente,ui_tamaño_fuente)
         self.win_fuente = pygame.font.Font(ui_fuente, win_tamaño_fuente)
         self.win_angulo_texto = random.randint(-8,8)
 
-
-    def mostrar_info(self):
+    def mostrar_info(self):  # Define el método 'mostrar_info' de la clase.
+        """
+        Parámetros
+        ----------
+        Ninguno
+        """
         datos_jugador = self.jugador.get_datos()
 
         # Balanace y tamño de apuesta
@@ -40,21 +81,39 @@ class UI:
             win_rect = win_surface.get_rect(center = (x1, y1))
             self.display_surface.blit(win_surface, win_rect)
 
-    def aumentar_apuesta(self):
+    def aumentar_apuesta(self):  # Define el método 'aumentar_apuesta' de la clase.
+        """
+        Parámetros
+        ----------
+        Ninguno
+        """
         self.jugador.tamaño_apuesta += 10
 
-    def diminuir_apuesta(self):
+    def diminuir_apuesta(self):  # Define el método 'diminuir_apuesta' de la clase.
+        """
+        Parámetros
+        ----------
+        Ninguno
+        """
         self.jugador.tamaño_apuesta -= 10
 
-    def ajustar_apuesta(self):
+    def ajustar_apuesta(self):  # Define el método 'ajustar_apuesta' de la clase.
+        """
+        Parámetros
+        ----------
+        Ninguno
+        """
         self.jugador.tamaño_apuesta = self.jugador.balance
 
-
-    def actualizar(self):
+    def actualizar(self):  # Define el método 'actualizar' de la clase.
+        """
+        Parámetros
+        ----------
+        Ninguno
+        """
         pygame.draw.rect(self.display_surface, "Black", pygame.Rect(0, 870, 1900, 300))
         pygame.draw.rect(self.display_surface, "Black", pygame.Rect(0, -240, 1900, 300))
         self.mostrar_info()
-
 
 
 

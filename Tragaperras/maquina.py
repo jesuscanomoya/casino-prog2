@@ -1,14 +1,79 @@
-import pygame
+import pygame  # Importa la biblioteca Pygame, que es usada para crear videojuegos.
+import sys  # Importa el módulo sys, que proporciona acceso a algunas variables y funciones que interactúan con el intérprete de Python.
+import time  # Importa el módulo time, que proporciona funciones para trabajar con tiempos.
 
-from jugador import Jugador
+from jugador import Jugador  # Importa la clase 'Jugador' del módulo 'jugador'.
 from carretes import *  # Importa todas las variables y funciones del módulo 'carretes'.
 from ajustes import *  # Importa todas las variables y funciones del módulo 'ajustes'.
-from wins import *
-from ui import UI
-import time
+from wins import *  # Importa todas las variables y funciones del módulo 'wins'.
+from ui import UI  # Importa la clase 'UI' del módulo 'ui'.
 
 class Maquina:  # Define una clase llamada 'Maquina'.
+    """
+    Clase Maquina: Gestiona la lógica de la máquina tragaperras.
+
+    Atributos
+    ---------
+    display_surface : pygame.Surface
+        La superficie actual de la pantalla.
+    balance_maquina : float
+        El balance actual de la máquina.
+    indice_carretes : int
+        El índice actual de los carretes.
+    lista_carretes : dict
+        Un diccionario que almacena los carretes.
+    puede_tirar : bool
+        Un booleano que indica si se puede tirar o no.
+    girando : bool
+        Un booleano que indica si los carretes están girando o no.
+    puede_animacion : bool
+        Un booleano que indica si se puede realizar la animación o no.
+    win_animacion_encendido : bool
+        Un booleano que indica si la animación de victoria está encendida o no.
+    resultado_anterior : dict
+        Un diccionario que almacena el resultado anterior.
+    resultado_giro : dict
+        Un diccionario que almacena el resultado del giro.
+    curr_jugador : Jugador
+        Una instancia de la clase 'Jugador'.
+    ui : UI
+        Una instancia de la clase 'UI'.
+    sonido_giro : pygame.mixer.Sound
+        El sonido del giro.
+    sonido_fila_3 : pygame.mixer.Sound
+        El sonido de la fila 3.
+    sonido_fila_4 : pygame.mixer.Sound
+        El sonido de la fila 4.
+    sonido_fila_5 : pygame.mixer.Sound
+        El sonido de la fila 5.
+    velocidad_cambio : float
+        La velocidad de cambio.
+    ultimo_cambio_tiempo : int
+        El último tiempo de cambio.
+
+    Métodos
+    -------
+    enfriamiento()
+        Controla el enfriamiento de la máquina.
+    input()
+        Gestiona las entradas del usuario.
+    dibujar_carrete(tiempo_delta)
+        Dibuja el carrete en la pantalla.
+    spawn_carretes()
+        Crea los carretes.
+    tirada()
+        Realiza un giro de los carretes.
+    obtener_resultado()
+        Obtiene el resultado del giro.
+    chekear_win(resultado)
+        Comprueba si el resultado es una victoria.
+    """
     def __init__(self):  # Define el método inicializador de la clase.
+        """
+        Parámetros
+        ----------
+        Ninguno
+        """
         self.display_surface = pygame.display.get_surface()  # Obtiene la superficie actual de la pantalla.
         self.balance_maquina = 10000.00
         self.indice_carretes = 0  # Inicializa el índice de los carretes a 0.
@@ -40,6 +105,11 @@ class Maquina:  # Define una clase llamada 'Maquina'.
         self.ultimo_cambio_tiempo = 0
 
     def enfriamiento(self):  # Define el método 'enfriamiento' de la clase.
+        """
+        Parámetros
+        ----------
+        Ninguno
+        """
         for carrete in self.lista_carretes:  # Recorre todos los carretes en la lista de carretes.
             if self.lista_carretes[carrete].carrete_girando:  # Si el carrete actual está girando...
                 self.puede_tirar = False  # No se puede tirar.
@@ -60,6 +130,11 @@ class Maquina:  # Define una clase llamada 'Maquina'.
                 self.ui.win_angulo_texto = random.randint(-4, 4)
 
     def input(self):  # Define el método 'input' de la clase.
+        """
+        Parámetros
+        ----------
+        Ninguno
+        """
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_SPACE] and self.puede_tirar and self.curr_jugador.balance >= self.curr_jugador.tamaño_apuesta:  # Si la tecla espacio está siendo presionada...
@@ -86,15 +161,22 @@ class Maquina:  # Define una clase llamada 'Maquina'.
             if time.time() - self.ultimo_cambio_tiempo > self.velocidad_cambio:
                 self.ui.diminuir_apuesta()
                 self.ultimo_cambio_tiempo = time.time()
-
-
-
-
     def dibujar_carrete(self, tiempo_delta):  # Define el método 'dibujar_carrete' de la clase.
+        """
+        Parámetros
+        ----------
+        tiempo_delta : float
+            El tiempo transcurrido desde la última actualización.
+        """
         for carrete in self.lista_carretes:  # Recorre todos los carretes en la lista de carretes.
             self.lista_carretes[carrete].animacion(tiempo_delta)  # Llama al método 'animacion' del carrete actual.
 
     def spawn_carretes(self):  # Define el método 'spawn_carretes' de la clase.
+        """
+        Parámetros
+        ----------
+        Ninguno
+        """
         if not self.lista_carretes:  # Si la lista de carretes está vacía...
             x_topleft, y_topleft = 280, -200  # Establece las coordenadas iniciales de la esquina superior izquierda de los carretes.
 
@@ -108,6 +190,11 @@ class Maquina:  # Define una clase llamada 'Maquina'.
             self.indice_carretes += 1  # Incrementa el índice de los carretes.
 
     def tirada(self):  # Define el método 'tirada' de la clase.
+        """
+        Parámetros
+        ----------
+        Ninguno
+        """
         if self.puede_tirar:  # Si se puede tirar...
             self.tiempo_tirada = pygame.time.get_ticks()  # Obtiene el tiempo actual en milisegundos desde que se inicializó Pygame.
             self.girando = not self.girando
@@ -120,11 +207,22 @@ class Maquina:  # Define una clase llamada 'Maquina'.
                 self.win_animacion_encendido = False
 
     def obtener_resultado(self):
+        """
+        Parámetros
+        ----------
+        Ninguno
+        """
         for carrete in self.lista_carretes:
             self.resultado_giro[carrete] = self.lista_carretes[carrete].giro_carrete_resultado()
         return self.resultado_giro
 
     def chekear_win(self, resultado):
+        """
+        Parámetros
+        ----------
+        resultado : dict
+            Un diccionario que almacena el resultado del giro.
+        """
         hits = {}
         horizontal = flip_horizontal(resultado)
         for fila in horizontal:
@@ -139,7 +237,15 @@ class Maquina:  # Define una clase llamada 'Maquina'.
             self.puede_animacion = True
             return hits
 
-    def pagar_jugador(self, datos_win, curr_jugador):
+    def pagar_jugador(self, datos_win, curr_jugador):  # Define el método 'pagar_jugador' de la clase.
+        """
+        Parámetros
+        ----------
+        datos_win : dict
+            Un diccionario que almacena los datos de la victoria.
+        curr_jugador : Jugador
+            Una instancia de la clase 'Jugador'.
+        """
         multiplicador = 0
 
         for v in datos_win.values():
@@ -150,7 +256,13 @@ class Maquina:  # Define una clase llamada 'Maquina'.
         curr_jugador.ultimo_pago = giro_pago
         curr_jugador.total_ganado += giro_pago
 
-    def poner_musica_win(self, datos_win):
+    def poner_musica_win(self, datos_win):  # Define el método 'poner_musica_win' de la clase.
+        """
+        Parámetros
+        ----------
+        datos_win : dict
+            Un diccionario que almacena los datos de la victoria.
+        """
         sum = 0
         for item in datos_win.values():
             sum += len(item[1])
@@ -161,7 +273,12 @@ class Maquina:  # Define una clase llamada 'Maquina'.
         elif sum > 4:
             self.sonido_fila_5.play()
 
-    def animacion_win(self):
+    def animacion_win(self):  # Define el método 'animacion_win' de la clase.
+        """
+        Parámetros
+        ----------
+        Ninguno
+        """
         if self.win_animacion_encendido and self.datos_win:
             for k, v in list(self.datos_win.items()):
                 if k == 1:
@@ -179,6 +296,12 @@ class Maquina:  # Define una clase llamada 'Maquina'.
                             simbolo.fade_out = True
 
     def actualizar(self, tiempo_delta):  # Define el método 'actualizar' de la clase.
+        """
+        Parámetros
+        ----------
+        tiempo_delta : float
+            El tiempo transcurrido desde la última actualización.
+        """
         self.enfriamiento()
         self.input()  # Llama al método 'input' para procesar la entrada del usuario.
         self.dibujar_carrete(tiempo_delta)  # Llama al método 'dibujar_carrete' para dibujar los carretes.
