@@ -13,6 +13,3 @@ def bd_crear():
     ''')
     conn.commit()
     conn.close()
-
-
-bd_crear()
