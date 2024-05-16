@@ -195,7 +195,7 @@ class Maquina:  # Define una clase llamada 'Maquina'.
         ----------
         Ninguno
         """
-        if self.puede_tirar:  # Si se puede tirar...
+        if self.puede_tirar and self.curr_jugador.balance >= 10:  # Si se puede tirar...
             self.tiempo_tirada = pygame.time.get_ticks()  # Obtiene el tiempo actual en milisegundos desde que se inicializó Pygame.
             self.girando = not self.girando
             self.puede_tirar = False  # Establece que no se puede tirar.
