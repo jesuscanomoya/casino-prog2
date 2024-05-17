@@ -1,12 +1,13 @@
 import matplotlib.pyplot as plt
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-import numpy as np
 import sqlite3
 import time
 
+# Este fichero se encarga de temas relacionados con el historial monetario
+
+# Creamos la clase que va a almacenar funciones
 class Grafica_balance():
+
+    # graficar_balance se ocupa de graficar un matplotlib a partir de un DNI
     @staticmethod
     def graficar_balance(dni):
         conn = sqlite3.connect('hist_bal.db')
@@ -17,7 +18,7 @@ class Grafica_balance():
         print(a)
         conn.close()
         lista_aux = []
-        # Data for plotting
+
         for i in range(0, len(a)):
             lista_aux.append(i)
 
@@ -63,4 +64,4 @@ class Grafica_balance():
             conn.close()
 
 if __name__ == '__main__':
-    Grafica_balance.eliminar_usuario(1)
+    Grafica_balance.graficar_balance(257)

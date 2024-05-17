@@ -23,8 +23,6 @@ class MainApp(QMainWindow):
         self.fondo.setGeometry(-30, -70, 1024, 1024)  # Su posición
         self.fondo.setPixmap(QPixmap('Imagenes/fondo_inicio_sesion.jpeg'))  # Imagen de fondo
 
-
-
         # Donde se va a meter visualmente las demás etiquetas
         self.label_menu = QLabel(self.titulo,parent= self)  # Creamos una etiqueta
         self.label_menu.setGeometry(230, 140, 371, 481)  # Su posición
@@ -110,20 +108,26 @@ class MainApp(QMainWindow):
         register.no_accounts_button.hide()
         register.show()
         self.hide()
-    ''''Esto es para que no se metan nombres, apellidos, etc con valores como NULL o cosas así'''
+
+    # Esto es para que no se metan nombres, apellidos, etc con valores como NULL o cosas así
     def verificar_usuario_log_in(self):
         if self.line_DNI.text() == '' or self.line_password.text() == '':
             self.error_line.show()
         else:
+            # Si va bien manda los valores a la clase Usuario y ahí ya verá si ha iniciado correctamente
             DNI,contrasenya =self.line_DNI.text(), self.line_password.text()
             print(f'DNI: {DNI}\nContraseña: {contrasenya}')
-            if not Usuario.login(DNI, contrasenya):
+            print(Usuario.login(DNI, contrasenya))
+            if Usuario.login(DNI, contrasenya) is None or Usuario.login(DNI, contrasenya) is False:
                 self.error_line.show()
+            else:
+                self.hide()
+            # if not Usuario.login(DNI, contrasenya):
+            #     self.error_line.show()
+            # else:
+            #     self.hide()
 
-
-
-
-    def verificar_usuario_register(self):
+    def verificar_usuario_register(self): # Mira que los valores no sean NULL y si no manda los datos a Usuario
         if self.line_username.text() == '' or self.line_password.text() == '' or self.line_apellido.text() == '' or self.line_DNI == '':
             self.error_line.show()
         else:
