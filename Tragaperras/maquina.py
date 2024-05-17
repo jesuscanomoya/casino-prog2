@@ -135,32 +135,36 @@ class Maquina:  # Define una clase llamada 'Maquina'.
         ----------
         Ninguno
         """
+
+
         keys = pygame.key.get_pressed()
 
-        if keys[pygame.K_SPACE] and self.puede_tirar and self.curr_jugador.balance >= self.curr_jugador.tamaño_apuesta:  # Si la tecla espacio está siendo presionada...
-            self.tirada()  # Llama al método 'tirada'.
-            self.tiempo_tirada = pygame.time.get_ticks()  # Obtiene el tiempo actual en milisegundos desde que se inicializó Pygame.
-            self.curr_jugador.poner_apuesta()
-            self.balance_maquina += self.curr_jugador.tamaño_apuesta
-            self.curr_jugador.ultimo_pago = None
+        if keys[pygame.K_SPACE]:
+            if self.puede_tirar and self.curr_jugador.balance >= self.curr_jugador.tamaño_apuesta:  # Si la tecla espacio está siendo presionada...
+                self.tirada()  # Llama al método 'tirada'.
+                self.tiempo_tirada = pygame.time.get_ticks()  # Obtiene el tiempo actual en milisegundos desde que se inicializó Pygame.
+                self.curr_jugador.poner_apuesta()
+                self.balance_maquina += self.curr_jugador.tamaño_apuesta
+                self.curr_jugador.ultimo_pago = None
+            elif self.puede_tirar and self.curr_jugador.balance < self.curr_jugador.tamaño_apuesta:
+                self.ui.ajustar_apuesta()
+                self.tirada()  # Llama al método 'tirada'.
+                self.tiempo_tirada = pygame.time.get_ticks()  # Obtiene el tiempo actual en milisegundos desde que se inicializó Pygame.
+                self.curr_jugador.poner_apuesta()
+                self.balance_maquina += self.curr_jugador.tamaño_apuesta
+                self.curr_jugador.ultimo_pago = None
 
-        elif keys[pygame.K_SPACE] and self.puede_tirar and self.curr_jugador.balance < self.curr_jugador.tamaño_apuesta:
-            self.ui.ajustar_apuesta()
-            self.tirada()  # Llama al método 'tirada'.
-            self.tiempo_tirada = pygame.time.get_ticks()  # Obtiene el tiempo actual en milisegundos desde que se inicializó Pygame.
-            self.curr_jugador.poner_apuesta()
-            self.balance_maquina += self.curr_jugador.tamaño_apuesta
-            self.curr_jugador.ultimo_pago = None
 
         elif keys[pygame.K_UP] and self.puede_tirar and self.curr_jugador.balance > self.curr_jugador.tamaño_apuesta:
             if time.time() - self.ultimo_cambio_tiempo > self.velocidad_cambio:
                 self.ui.aumentar_apuesta()
                 self.ultimo_cambio_tiempo = time.time()
 
-        elif keys[pygame.K_DOWN] and self.puede_tirar and self.curr_jugador.balance > self.curr_jugador.tamaño_apuesta:
+        elif keys[pygame.K_DOWN] and self.puede_tirar and self.curr_jugador.tamaño_apuesta > 10 and self.curr_jugador.balance > self.curr_jugador.tamaño_apuesta:
             if time.time() - self.ultimo_cambio_tiempo > self.velocidad_cambio:
                 self.ui.diminuir_apuesta()
                 self.ultimo_cambio_tiempo = time.time()
+
     def dibujar_carrete(self, tiempo_delta):  # Define el método 'dibujar_carrete' de la clase.
         """
         Parámetros
