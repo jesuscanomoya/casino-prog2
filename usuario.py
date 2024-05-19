@@ -1,6 +1,6 @@
 import sqlite3
 from hashlib import sha256
-# from ventana import *
+import time
 
 
 class Usuario:
@@ -24,15 +24,19 @@ class Usuario:
     hash_password(contrasena)
         Codifica la contraseña del usuario (función hashlib.sha256).
     guardar_en_bd()
-        Guarda el usuario registrado en la base de datos 'usuarios.db'.
+        Guarda el usuario registrado en la tabla 'usuarios'.
+        Establece una primera transacción en la tabla 'hist_bal'.
     login(dni, contrasena)
-        Busca si el usuario está registrado en la base de datos.
+        Busca si el usuario está registrado en la tabla 'usuarios'
+        de la base de datos.
     cambiar_contrasena(dni, nueva_contrasena)
         Cambia la contraseña del usuario correspondiente.
     eliminar_usuario(dni)
         Elimina el usuario correspondiente de la base de datos 'usuarios.db'.
     actualizar_dinero(dni, dinero)
         Modifica el valor del dinero del usuario en la base de datos.
+        Cambia el valor en la tabla 'usuarios'.
+        Crea línea de modificación en la tabla 'hist_bal'.
     prohibir_entrada(dni)
         Marca un usuario como prohibido en la base de datos.
 
@@ -91,6 +95,9 @@ class Usuario:
         try:
             cursor.execute('INSERT INTO usuarios (dni, nombre, apellidos, contraseña) VALUES (?, ?, ?, ?)',
                            (self.dni, self.nombre, self.apellidos, self.contrasena))
+            conn.commit()
+            cursor.execute('INSERT INTO hist_bal (dni, tiempo) VALUES (?, ?)',
+                   (self.dni, time.time()))
             conn.commit()
             print("Usuario registrado exitosamente!")
         except sqlite3.IntegrityError:
@@ -170,6 +177,8 @@ class Usuario:
         try:
             cursor.execute('DELETE FROM usuarios WHERE dni = ?', (dni,))
             conn.commit()
+            cursor.execute('DELETE FROM hist_bal WHERE dni = ?', (dni,))
+            conn.commit()
             print("Usuario dado de baja correctamente.")
         except Exception as e:
             print("Error al dar de baja:", e)
@@ -194,6 +203,9 @@ class Usuario:
         cursor = conn.cursor()
         try:
             cursor.execute('UPDATE usuarios SET dinero = ? WHERE dni = ?', (dinero, dni))
+            conn.commit()
+            cursor.execute('INSERT INTO hist_bal (dni, tiempo, dinero) VALUES (?, ?, ?)',
+                           (dni, time.time(), dinero))
             conn.commit()
             print("Capital actualizado correctamente.")
         except Exception as e:
