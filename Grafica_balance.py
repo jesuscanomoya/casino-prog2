@@ -25,22 +25,25 @@ class Grafica_balance:
         # Crea una lista con su longitud
         for i in range(0, len(a)):
             lista_aux.append(i)
-
+        # Pono las líneas para que se vea mejor
         fig, ax = plt.subplots()
         ax.plot(lista_aux, a)
 
+        # Títulos y demás cosas
         ax.set(xlabel='time (s)', ylabel='Dinero',
                title='Historial crediticio')
         ax.grid()
 
+        # Guarda la imagen para que se pueda utilizar luego
         plt.savefig('Imagenes/hist_bal.png')
         plt.show()
 
+    # Esta función se encarga de meter datos en la bd para que se puedan usar
     @staticmethod
     def meter_datos_bd(DNI, dinero):
         conn = sqlite3.connect('hist_bal.db')
         cursor = conn.cursor()
-
+        # Mute los valores y mira que no pasé nada
         try:
             cursor.execute('INSERT INTO hist_bal (dni, dinero, tiempo) VALUES (?, ?, ?)',
                            (DNI, dinero, time.time()))
@@ -53,6 +56,7 @@ class Grafica_balance:
         finally:
             conn.close()
 
+    # Como dice su título elimina el user en la bd usando DELETE
     @staticmethod
     def eliminar_usuario(DNI):
         conn = sqlite3.connect('hist_bal.db')
