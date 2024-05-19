@@ -1,50 +1,49 @@
 import matplotlib.pyplot as plt
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-import numpy as np
 import sqlite3
 import time
 
-class Grafica_balance(QMainWindow):
-    def __init__(self, dni, parent=None, *args):
-        super(Grafica_balance, self).__init__(parent=parent)
-        self.setWindowTitle('Casino')  # Título de página
-        self.setWindowIcon(QIcon('Imagenes/icon.jpg'))  # Icono de ventana
-        self.setFixedSize(900, 800)  # Tamaño
-        self.clave = dni
+
+# Este fichero se encarga de temas relacionados con el historial monetario
+
+# Creamos la clase que va a almacenar funciones y poder llamarlas desde otros ficheros
+class Grafica_balance:
+
+    # graficar_balance se ocupa de graficar un matplotlib a partir de un DNI
+    @staticmethod
+    def graficar_balance(dni):
+        # Coge la base de datos
         conn = sqlite3.connect('hist_bal.db')
         cursor = conn.cursor()
-
-        cursor.execute('SELECT dinero FROM hist_bal WHERE dni = ?', (str(self.clave),))
+        # Pilla los valores que queremos
+        cursor.execute('SELECT dinero FROM hist_bal WHERE dni = ?', (str(dni),))
+        # Obtiene la columna
         user = cursor.fetchall()
         a = ([i[0] for i in user])
         print(a)
         conn.close()
         lista_aux = []
-        # Data for plotting
+        # Crea una lista con su longitud
         for i in range(0, len(a)):
             lista_aux.append(i)
-
+        # Pono las líneas para que se vea mejor
         fig, ax = plt.subplots()
         ax.plot(lista_aux, a)
 
+        # Títulos y demás cosas
         ax.set(xlabel='time (s)', ylabel='Dinero',
                title='Historial crediticio')
         ax.grid()
 
+        # Guarda la imagen para que se pueda utilizar luego
         plt.savefig('Imagenes/hist_bal.png')
+        plt.show()
 
-        # Fondo
-        self.fondo = QLabel(self)  # Creamos una etiqueta que va a ser el fondo de la ventana
-        self.fondo.setGeometry(-30, -70, 1024, 1024)  # Su posición
-        self.fondo.setPixmap(QPixmap('Imagenes/hist_bal.png'))  # Imagen de fondo
-
+    # Esta función se encarga de meter datos en la bd para que se puedan usar
     @staticmethod
     def meter_datos_bd(DNI, dinero):
         conn = sqlite3.connect('hist_bal.db')
         cursor = conn.cursor()
-
+        # Mute los valores y mira que no pasé nada
         try:
             cursor.execute('INSERT INTO hist_bal (dni, dinero, tiempo) VALUES (?, ?, ?)',
                            (DNI, dinero, time.time()))
@@ -57,10 +56,21 @@ class Grafica_balance(QMainWindow):
         finally:
             conn.close()
 
+    # Como dice su título elimina el user en la bd usando DELETE
+    @staticmethod
+    def eliminar_usuario(DNI):
+        conn = sqlite3.connect('hist_bal.db')
+        cursor = conn.cursor()
+        try:
+            cursor.execute('DELETE FROM hist_bal WHERE dni = ?', (DNI,))
+            conn.commit()
+            print("Usuario dado de baja correctamente.")
+        except Exception as e:
+            print("Error al dar de baja:", e)
+        finally:
+            conn.close()
+
 
 if __name__ == '__main__':
-    app = QApplication([])
-    grafico = Grafica_balance(257)
+    Grafica_balance.graficar_balance(257)
 
-    grafico.show()
-    app.exec_()
