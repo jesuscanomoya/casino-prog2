@@ -12,7 +12,7 @@ class Grafica_balance:
     @staticmethod
     def graficar_balance(dni):
         # Coge la base de datos
-        conn = sqlite3.connect('hist_bal.db')
+        conn = sqlite3.connect('usuarios.db')
         cursor = conn.cursor()
         # Pilla los valores que queremos
         cursor.execute('SELECT dinero FROM hist_bal WHERE dni = ?', (str(dni),))
@@ -41,7 +41,7 @@ class Grafica_balance:
     # Esta función se encarga de meter datos en la bd para que se puedan usar
     @staticmethod
     def meter_datos_bd(DNI, dinero):
-        conn = sqlite3.connect('hist_bal.db')
+        conn = sqlite3.connect('usuarios.db')
         cursor = conn.cursor()
         # Mute los valores y mira que no pasé nada
         try:
@@ -59,7 +59,7 @@ class Grafica_balance:
     # Como dice su título elimina el user en la bd usando DELETE
     @staticmethod
     def eliminar_usuario(DNI):
-        conn = sqlite3.connect('hist_bal.db')
+        conn = sqlite3.connect('usuarios.db')
         cursor = conn.cursor()
         try:
             cursor.execute('DELETE FROM hist_bal WHERE dni = ?', (DNI,))
@@ -69,6 +69,7 @@ class Grafica_balance:
             print("Error al dar de baja:", e)
         finally:
             conn.close()
+
 
 
 if __name__ == '__main__':

@@ -1,6 +1,7 @@
 import sqlite3
 from hashlib import sha256
 # from ventana import *
+from Grafica_balance import *
 
 
 class Usuario:
@@ -99,6 +100,7 @@ class Usuario:
             print("Error operacional:", e)
         finally:
             conn.close()
+        Grafica_balance.meter_datos_bd(self.dni, 10)
 
     @staticmethod
     def login(dni, contrasena):
@@ -175,6 +177,7 @@ class Usuario:
             print("Error al dar de baja:", e)
         finally:
             conn.close()
+        Grafica_balance.eliminar_usuario(dni)
 
     @staticmethod
     def actualizar_dinero(dni, dinero):
@@ -200,6 +203,7 @@ class Usuario:
             print("Error al actualizar el capital:", e)
         finally:
             conn.close()
+        Grafica_balance.meter_datos_bd(dni, dinero)
 
     @staticmethod
     def prohibir_entrada(dni):
