@@ -3,6 +3,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from usuario import *
+import re
 
 # Cuando escribí esto, solo Dios y yo entendíamos lo que estaba haciendo
 # Ahora ya solo lo sabe Dios.
@@ -137,16 +138,20 @@ class MainApp(QMainWindow):
 
 
     def verificar_usuario_register(self): # Mira que los valores no sean NULL y si no manda los datos a Usuario
-        if self.line_username.text() == '' or self.line_password.text() == '' or self.line_apellido.text() == '' or self.line_DNI == '':
+        if self.line_username.text() == '' or self.line_password.text() == '' or self.line_apellido.text() == '' or self.line_DNI.text() == '' or not register.dni_nie_correcto(self.line_DNI.text()):
             self.error_line.setText("Debes introducir bien los parámetros")
             self.error_line.show()
         else:
             nombre,contrasenya,apellidos,DNI =self.line_username.text(), self.line_password.text(),self.line_apellido.text(),self.line_DNI.text()
             print(f'Nombre: {nombre}\nApellidos: {apellidos}\nDNI: {DNI}\nContraseña: {contrasenya}')
             user = Usuario(DNI, nombre, apellidos, contrasenya)
-            if user.guardar_en_bd():
+            registrado = user.guardar_en_bd()
+            print(f'REgistrado: {registrado}')
+            if registrado:
                 print("entro")
-                self.dni, self.dinero = user.guardar_en_bd()
+
+                self.dni, self.dinero = registrado
+                print(self.dni, self.dinero)
                 self.hide()
 
 
@@ -156,6 +161,35 @@ class MainApp(QMainWindow):
                 self.error_line.show()
                 self.show()
 
+    @staticmethod
+    def dni_nie_correcto(dni):
+        letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X',
+                  'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E']
+
+        dni_valido = re.search('^[0-9]{8}[A-Z]$', dni)
+        nie_valido = re.search('^[X-Z][0-9]{7}[A-Z]$', dni)
+        if dni_valido:
+            valido = dni_valido
+            sin_letra = valido[0][:-1]
+            resto = int(sin_letra) % 23
+            if (sin_letra + letras[resto]) == valido[0]:
+                print('true')
+                return True
+            else:
+                print('false')
+                return False
+        elif nie_valido:
+            valido = nie_valido
+            sin_letra = valido[0][0:-1]
+            resto = int(sin_letra[1:]) % 23
+            if (sin_letra + letras[resto]) == valido[0]:
+                print('true')
+                return True
+            else:
+                print('false')
+                return False
+        else:
+            return False
 
 
 if __name__ == '__main__':
