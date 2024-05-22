@@ -1,17 +1,17 @@
 import matplotlib.pyplot as plt
 import sqlite3
-import time
 
 
 # Este fichero se encarga de temas relacionados con el historial monetario
 
+# Creamos la clase que va a almacenar funciones y poder llamarlas desde otros ficheros
 class Grafica_balance:
 
     # graficar_balance se ocupa de graficar un matplotlib a partir de un DNI
     @staticmethod
     def graficar_balance(dni):
         # Coge la base de datos
-        conn = sqlite3.connect('hist_bal.db')
+        conn = sqlite3.connect('usuarios.db')
         cursor = conn.cursor()
         # Pilla los valores que queremos
         cursor.execute('SELECT dinero FROM hist_bal WHERE dni = ?', (str(dni),))
