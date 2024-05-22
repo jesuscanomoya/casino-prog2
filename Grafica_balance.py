@@ -39,4 +39,4 @@ class Grafica_balance:
 
 
 if __name__ == '__main__':
-    Grafica_balance.graficar_balance(257)
+    Grafica_balance.graficar_balance('11111111H')
