@@ -131,13 +131,20 @@ class MainApp(QMainWindow):
 
     def verificar_usuario_register(self): # Mira que los valores no sean NULL y si no manda los datos a Usuario
         if self.line_username.text() == '' or self.line_password.text() == '' or self.line_apellido.text() == '' or self.line_DNI == '':
+            self.error_line.setText("Debes introducir bien los parámetros")
             self.error_line.show()
         else:
             nombre,contrasenya,apellidos,DNI =self.line_username.text(), self.line_password.text(),self.line_apellido.text(),self.line_DNI.text()
             print(f'Nombre: {nombre}\nApellidos: {apellidos}\nDNI: {DNI}\nContraseña: {contrasenya}')
             user = Usuario(DNI, nombre, apellidos, contrasenya)
-            user.guardar_en_bd()
-            self.hide()
+            if user.guardar_en_bd():
+                print("entro")
+
+            else:
+                print("no entro")
+                self.error_line.setText("Usuario ya existente")
+                self.error_line.show()
+                self.show()
 
 
 

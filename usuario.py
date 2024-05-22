@@ -96,6 +96,9 @@ class Usuario:
             print("Usuario registrado exitosamente!")
         except sqlite3.IntegrityError:
             print("El DNI ya existe en la base de datos.")
+            conn.close()
+            print("joal")
+            return False
         except sqlite3.OperationalError as e:
             print("Error operacional:", e)
         finally:
