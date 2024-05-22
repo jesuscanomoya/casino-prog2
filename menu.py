@@ -311,9 +311,25 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.addWidget(self.label)
         self.stackedWidget.addWidget(self.page_dos)
 
+        self.page_tres = QtWidgets.QWidget()
+        self.page_tres.setObjectName("page_tres")
+        self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.page_tres)
+        self.verticalLayout_6.setObjectName("verticalLayout_6")
+
+        self.label = QtWidgets.QLabel(self.page_tres)
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap('Imagenes/hist_bal.png'))
+        self.label.setScaledContents(False)
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setIndent(0)
+        self.label.setObjectName("label")
+        self.verticalLayout_6.addWidget(self.label)
+        self.stackedWidget.addWidget(self.page_tres)
+
         self.pushButton_4 = QtWidgets.QPushButton(self.page_dos)
         self.pushButton_4.setStyleSheet("background-color: rgb(0, 220, 0);\n"
                                         "font: 87 36pt \"Arial Black\";")
+
         self.pushButton_4.setObjectName("pushButton_4")
         self.verticalLayout_5.addWidget(self.pushButton_4)
         self.stackedWidget.addWidget(self.page_dos)
@@ -325,7 +341,7 @@ class Ui_MainWindow(object):
 
         self.pushButton_3 = QtWidgets.QPushButton(self.page_tres)
         self.pushButton_3.setStyleSheet("background-color: rgb(255, 255, 0);\n"
-                                        "font: 87 36pt \"Arial Black\";")
+                                         "font: 87 36pt \"Arial Black\";")
 
         self.pushButton_3.setObjectName("pushButton_3")
         self.verticalLayout_6.addWidget(self.pushButton_3)
@@ -339,6 +355,7 @@ class Ui_MainWindow(object):
         self.pushButton_2 = QtWidgets.QPushButton(self.page_cuatro)
         self.pushButton_2.setStyleSheet("background-color: rgb(85, 255, 0);\n"
                                         "font: 87 36pt \"Arial Black\";")
+
         self.pushButton_2.setObjectName("pushButton_2")
         self.verticalLayout_7.addWidget(self.pushButton_2)
         self.stackedWidget.addWidget(self.page_cuatro)
@@ -350,6 +367,7 @@ class Ui_MainWindow(object):
         self.pushButton = QtWidgets.QPushButton(self.page_cinco)
         self.pushButton.setStyleSheet("background-color: rgb(0, 170, 255);\n"
                                       "font: 87 36pt \"Arial Black\";")
+
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout_8.addWidget(self.pushButton)
         self.stackedWidget.addWidget(self.page_cinco)
@@ -373,7 +391,7 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "  Casino "))
         self.pushButton_5.setText(_translate("MainWindow", "JUGAR"))
         self.pushButton_4.setText(_translate("MainWindow", "JUGAR"))
-        self.pushButton_3.setText(_translate("MainWindow", "PERFIL"))
+        self.pushButton_3.setText(_translate("MainWindow", "INGRESAR +10"))
 
 
 

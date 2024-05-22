@@ -1,7 +1,7 @@
 import sqlite3
 from hashlib import sha256
 import time
-
+from Grafica_balance import Grafica_balance
 
 class Usuario:
     """
@@ -215,6 +215,8 @@ class Usuario:
             print("Capital actualizado correctamente.")
         except Exception as e:
             print("Error al actualizar el capital:", e)
+        else:
+            Grafica_balance.graficar_balance(dni)
         finally:
             conn.close()
 

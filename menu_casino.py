@@ -44,6 +44,7 @@ class MiApp(QtWidgets.QMainWindow):
         # Conectar botones de juego
         self.ui.pushButton_5.clicked.connect(self.accion_jugar_tragaperras)
         self.ui.pushButton_4.clicked.connect(self.accion_jugar_blackjack)
+        self.ui.pushButton_3.clicked.connect(self.ingresar_dinero)
 
         self.tragaperras = None  # Inicializa la instancia de Tragaperras
         self.blackjack = None
@@ -90,6 +91,9 @@ class MiApp(QtWidgets.QMainWindow):
         except pygame.error:
             self.blackjack = Blackjack(self.jugador)
             self.blackjack.inicio_blackjack()
+
+    def ingresar_dinero(self):
+        self.jugador.balance += 10
 
     def resizeEvent(self, event):
         rect = self.rect()
