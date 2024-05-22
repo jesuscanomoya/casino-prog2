@@ -27,3 +27,4 @@
 - **[PyQt5](https://pypi.org/project/PyQt5/)**
 - **[PyGame](https://www.pygame.org/)**
 - **[MatplotLib](https://matplotlib.org/)**
+- **[SQLite3](https://docs.python.org/es/3/library/sqlite3.html)**
