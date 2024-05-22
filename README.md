@@ -1,5 +1,8 @@
 <h1 align="center"> 🎟️Casino Online🎟️ </h1>
 
+![Static Badge](https://img.shields.io/badge/Version-v1.0-yellow)
+![Static Badge](https://img.shields.io/badge/Colaboradores-5-darkblue)
+
 # 🧑‍💻Integrantes
 - [Jesús Cano](https://github.com/jesuscanomoya)
 - [Dennis García](https://github.com/Dennisgs05)
