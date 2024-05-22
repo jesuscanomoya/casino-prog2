@@ -130,6 +130,7 @@ class MainApp(QMainWindow):
             else:
                 self.dni, self.dinero = Usuario.login(DNI, contrasenya)
                 self.jugador = Jugador(self.dni,self.dinero)
+                Grafica_balance.graficar_balance(self.dni)
                 self.hide()
                 self.mi_app = MiApp(self.jugador)
                 self.mi_app.show()
@@ -151,9 +152,9 @@ class MainApp(QMainWindow):
 
                 self.dni, self.dinero = registrado
                 print(self.dni, self.dinero)
+
                 self.hide()
-                self.mi_app = MiApp(self.jugador)
-                self.mi_app.show()
+                log_in.show()
 
 
             else:

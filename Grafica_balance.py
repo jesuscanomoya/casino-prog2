@@ -21,6 +21,7 @@ class Grafica_balance:
         # Crea una lista con su longitud
         for i in range(0, len(a)):
             lista_aux.append(i)
+        plt.figure(figsize = (10,8))
         # Pono las líneas para que se vea mejor
         fig, ax = plt.subplots()
         ax.plot(lista_aux, a)
@@ -38,7 +39,7 @@ class Grafica_balance:
 
         # Guarda la imagen para que se pueda utilizar luego
         plt.savefig('Imagenes/hist_bal.png')
-        #plt.show()
+
 
 
 if __name__ == '__main__':

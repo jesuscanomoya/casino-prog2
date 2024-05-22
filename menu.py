@@ -276,14 +276,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.page_uno)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
 
-        self.label = QtWidgets.QLabel(self.page_uno)
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("Tragaperras/descripcion_tragaperras.png"))
-        self.label.setScaledContents(False)
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setIndent(0)
-        self.label.setObjectName("label")
-        self.verticalLayout_4.addWidget(self.label)
+        self.label_2 = QtWidgets.QLabel(self.page_uno)
+        self.label_2.setText("")
+        self.label_2.setPixmap(QtGui.QPixmap("Tragaperras/descripcion_tragaperras.png"))
+        self.label_2.setScaledContents(False)
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setIndent(0)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_4.addWidget(self.label_2)
         self.stackedWidget.addWidget(self.page_uno)
 
         self.pushButton_5 = QtWidgets.QPushButton(self.page_uno)
@@ -295,41 +295,24 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page_uno)
         self.verticalLayout_4.addWidget(self.pushButton_5)
 
-
         self.page_dos = QtWidgets.QWidget()
         self.page_dos.setObjectName("page_dos")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.page_dos)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
 
-        self.label = QtWidgets.QLabel(self.page_dos)
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("descripcion_blackjack.png"))
-        self.label.setScaledContents(False)
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setIndent(0)
-        self.label.setObjectName("label")
-        self.verticalLayout_5.addWidget(self.label)
+        self.label_3 = QtWidgets.QLabel(self.page_dos)
+        self.label_3.setText("")
+        self.label_3.setPixmap(QtGui.QPixmap("Tragaperras/descripcion_blackjack.png"))
+        self.label_3.setScaledContents(False)
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setIndent(0)
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout_5.addWidget(self.label_3)
         self.stackedWidget.addWidget(self.page_dos)
-
-        self.page_tres = QtWidgets.QWidget()
-        self.page_tres.setObjectName("page_tres")
-        self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.page_tres)
-        self.verticalLayout_6.setObjectName("verticalLayout_6")
-
-        self.label = QtWidgets.QLabel(self.page_tres)
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap('Imagenes/hist_bal.png'))
-        self.label.setScaledContents(False)
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setIndent(0)
-        self.label.setObjectName("label")
-        self.verticalLayout_6.addWidget(self.label)
-        self.stackedWidget.addWidget(self.page_tres)
 
         self.pushButton_4 = QtWidgets.QPushButton(self.page_dos)
         self.pushButton_4.setStyleSheet("background-color: rgb(0, 220, 0);\n"
                                         "font: 87 36pt \"Arial Black\";")
-
         self.pushButton_4.setObjectName("pushButton_4")
         self.verticalLayout_5.addWidget(self.pushButton_4)
         self.stackedWidget.addWidget(self.page_dos)
@@ -339,10 +322,19 @@ class Ui_MainWindow(object):
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.page_tres)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
 
-        self.pushButton_3 = QtWidgets.QPushButton(self.page_tres)
-        self.pushButton_3.setStyleSheet("background-color: rgb(255, 255, 0);\n"
-                                         "font: 87 36pt \"Arial Black\";")
+        self.label_4 = QtWidgets.QLabel(self.page_dos)
+        self.label_4.setText("")
+        self.label_4.setPixmap(QtGui.QPixmap("Imagenes/hist_bal.png"))
+        self.label_4.setScaledContents(True)
+        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_4.setIndent(0)
+        self.label_4.setObjectName("label_4")
+        self.verticalLayout_6.addWidget(self.label_4)
+        self.stackedWidget.addWidget(self.page_tres)
 
+        self.pushButton_3 = QtWidgets.QPushButton(self.page_tres)
+        self.pushButton_3.setStyleSheet("background-color: rgb(0, 220, 0);\n"
+                                        "font: 87 36pt \"Arial Black\";")
         self.pushButton_3.setObjectName("pushButton_3")
         self.verticalLayout_6.addWidget(self.pushButton_3)
         self.stackedWidget.addWidget(self.page_tres)
@@ -355,7 +347,6 @@ class Ui_MainWindow(object):
         self.pushButton_2 = QtWidgets.QPushButton(self.page_cuatro)
         self.pushButton_2.setStyleSheet("background-color: rgb(85, 255, 0);\n"
                                         "font: 87 36pt \"Arial Black\";")
-
         self.pushButton_2.setObjectName("pushButton_2")
         self.verticalLayout_7.addWidget(self.pushButton_2)
         self.stackedWidget.addWidget(self.page_cuatro)
@@ -367,7 +358,6 @@ class Ui_MainWindow(object):
         self.pushButton = QtWidgets.QPushButton(self.page_cinco)
         self.pushButton.setStyleSheet("background-color: rgb(0, 170, 255);\n"
                                       "font: 87 36pt \"Arial Black\";")
-
         self.pushButton.setObjectName("pushButton")
         self.verticalLayout_8.addWidget(self.pushButton)
         self.stackedWidget.addWidget(self.page_cinco)
@@ -388,19 +378,16 @@ class Ui_MainWindow(object):
         self.bt_uno.setText(_translate("MainWindow", "   TRAGAPERRAS"))
         self.bt_dos.setText(_translate("MainWindow", "    BLACKJACK"))
         self.bt_tres.setText(_translate("MainWindow", "    PERFIL"))
-        self.label_2.setText(_translate("MainWindow", "  Casino "))
         self.pushButton_5.setText(_translate("MainWindow", "JUGAR"))
         self.pushButton_4.setText(_translate("MainWindow", "JUGAR"))
         self.pushButton_3.setText(_translate("MainWindow", "INGRESAR +10"))
 
+    if __name__ == "__main__":
+        import sys
 
-
-if __name__ == "__main__":
-    import sys
-
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+        app = QtWidgets.QApplication(sys.argv)
+        MainWindow = QtWidgets.QMainWindow()
+        ui = Ui_MainWindow()
+        ui.setupUi(MainWindow)
+        MainWindow.show()
+        sys.exit(app.exec_())
