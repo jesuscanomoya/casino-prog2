@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import sqlite3
-import time
 
 
 # Este fichero se encarga de temas relacionados con el historial monetario
@@ -39,39 +38,8 @@ class Grafica_balance:
         plt.show()
 
     # Esta función se encarga de meter datos en la bd para que se puedan usar
-    @staticmethod
-    def meter_datos_bd(DNI, dinero):
-        conn = sqlite3.connect('usuarios.db')
-        cursor = conn.cursor()
-        # Mute los valores y mira que no pasé nada
-        try:
-            cursor.execute('INSERT INTO hist_bal (dni, dinero, tiempo) VALUES (?, ?, ?)',
-                           (DNI, dinero, time.time()))
-            conn.commit()
-            print("Todo sucedió bien")
-        except sqlite3.IntegrityError:
-            print("Esto no debería pasar")
-        except sqlite3.OperationalError as e:
-            print("Error operacional:", e)
-        finally:
-            conn.close()
-
-    # Como dice su título elimina el user en la bd usando DELETE
-    @staticmethod
-    def eliminar_usuario(DNI):
-        conn = sqlite3.connect('usuarios.db')
-        cursor = conn.cursor()
-        try:
-            cursor.execute('DELETE FROM hist_bal WHERE dni = ?', (DNI,))
-            conn.commit()
-            print("Usuario dado de baja correctamente.")
-        except Exception as e:
-            print("Error al dar de baja:", e)
-        finally:
-            conn.close()
-
 
 
 if __name__ == '__main__':
-    Grafica_balance.graficar_balance(257)
+    Grafica_balance.graficar_balance("c")
 

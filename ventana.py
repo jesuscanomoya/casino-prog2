@@ -124,6 +124,7 @@ class MainApp(QMainWindow):
                 self.error_line.show()
             else:
                 self.hide()
+                #print(Usuario.dni)
             # if not Usuario.login(DNI, contrasenya):
             #     self.error_line.show()
             # else:
@@ -139,10 +140,12 @@ class MainApp(QMainWindow):
             user = Usuario(DNI, nombre, apellidos, contrasenya)
             if user.guardar_en_bd():
                 print("entro")
+                self.hide()
+
 
             else:
                 print("no entro")
-                self.error_line.setText("Usuario ya existente")
+                self.error_line.setText("Usuario ya existente u otro error")
                 self.error_line.show()
                 self.show()
 
