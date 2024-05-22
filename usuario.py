@@ -79,7 +79,8 @@ class Usuario:
 
     def guardar_en_bd(self):
         """
-        Guarda el usuario registrado en la base de datos 'usuarios.db'
+        Guarda el usuario registrado en la base de datos 'usuarios.db.
+        Devuelve su dni y su dinero (que usará en los juegos del casino).'
 
         Raises
         ------
@@ -90,20 +91,23 @@ class Usuario:
         """
         conn = sqlite3.connect('usuarios.db')
         cursor = conn.cursor()
-        print(self.dni, self.nombre, self.apellidos, self.contrasena)
 
         try:
             cursor.execute('INSERT INTO usuarios (dni, nombre, apellidos, contraseña) VALUES (?, ?, ?, ?)',
                            (self.dni, self.nombre, self.apellidos, self.contrasena))
             conn.commit()
             cursor.execute('INSERT INTO hist_bal (dni, tiempo) VALUES (?, ?)',
-                   (self.dni, time.time()))
+                           (self.dni, time.time()))
             conn.commit()
             print("Usuario registrado exitosamente!")
         except sqlite3.IntegrityError:
             print("El DNI ya existe en la base de datos.")
         except sqlite3.OperationalError as e:
             print("Error operacional:", e)
+        else:
+            cursor.execute('SELECT dinero FROM usuarios WHERE dni = ?', (self.dni,))
+            dinero = cursor.fetchone()
+            return self.dni, dinero[0]
         finally:
             conn.close()
 
@@ -129,7 +133,6 @@ class Usuario:
         conn.close()
         if user:
             if user[-1]:
-                print("Usuario con acceso prohibido")
                 return False
             else:
                 return user[0], user[-2]
@@ -235,3 +238,4 @@ class Usuario:
             print("Error al restringir usuario:", e)
         finally:
             conn.close()
+
