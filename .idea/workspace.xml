@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="934f4f9b-7fee-4115-9261-ee5983fe3ed7" name="Changes" comment="actualizado">
+      <change afterPath="$PROJECT_DIR$/Requirements" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Configuraciones.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Configuraciones.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grafica_balance.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Grafica_balance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imagenes/fondo_inicio.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Imagenes/fondo_inicio.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imagenes/fondo_inicio_sesion.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Imagenes/fondo_inicio_sesion.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imagenes/hist_bal.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Imagenes/hist_bal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Imagenes/icon.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Imagenes/icon.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/Cancion principal.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/Cancion principal.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/Grafica_balance.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/Grafica_balance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/Imagenes/fondo_inicio.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/Imagenes/fondo_inicio.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/Imagenes/fondo_inicio_sesion.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/Imagenes/fondo_inicio_sesion.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/Imagenes/hist_bal.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/Imagenes/hist_bal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/Imagenes/icon.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/Imagenes/icon.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/Menu Casino.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/Menu Casino.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/Nightmare Codehack.otf" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/Nightmare Codehack.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/R.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/R.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/base_de_datos.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/base_de_datos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/cerrar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/cerrar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/descripcion_blackjack.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/descripcion_blackjack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/descripcion_tragaperras.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/descripcion_tragaperras.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/giro.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/giro.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/logocasino.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/logocasino.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/maximizar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/maximizar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/minimizar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/minimizar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/parar.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/parar.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/prueba_usuarios.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/prueba_usuarios.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/rojodegradado.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/rojodegradado.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/simbolos/Cereza.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/simbolos/Cereza.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/simbolos/limon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/simbolos/limon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/simbolos/melocoton.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/simbolos/melocoton.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/simbolos/platano.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/simbolos/platano.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/simbolos/sietes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/simbolos/sietes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/usuario.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/usuario.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/usuarios.db" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/usuarios.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/ventana.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/ventana.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/win_3.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/win_3.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/win_4.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/win_4.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tragaperras/win_5.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/Tragaperras/win_5.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajustes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/ajustes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajustes2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/ajustes2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base_de_datos.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/base_de_datos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carretes2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/carretes2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cerrar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/cerrar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/descripcion_blackjack.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/descripcion_blackjack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fondoverde.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/fondoverde.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/10_Corazones.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/10_Corazones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/10_Diamantes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/10_Diamantes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/10_Picas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/10_Picas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/10_Treboles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/10_Treboles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/2_Corazones.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/2_Corazones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/2_Diamantes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/2_Diamantes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/2_Picas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/2_Picas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/2_Treboles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/2_Treboles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/3_Corazones.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/3_Corazones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/3_Diamantes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/3_Diamantes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/3_Picas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/3_Picas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/3_Treboles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/3_Treboles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/4_Corazones.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/4_Corazones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/4_Diamantes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/4_Diamantes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/4_Picas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/4_Picas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/5_Corazones.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/5_Corazones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/5_Diamantes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/5_Diamantes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/5_Picas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/5_Picas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/5_Treboles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/5_Treboles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/6_Corazones.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/6_Corazones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/6_Diamantes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/6_Diamantes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/6_Picas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/6_Picas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/6_Treboles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/6_Treboles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/7_Corazones.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/7_Corazones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/7_Diamantes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/7_Diamantes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/7_Picas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/7_Picas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/7_Treboles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/7_Treboles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/8_Corazones.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/8_Corazones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/8_Diamantes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/8_Diamantes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/8_Picas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/8_Picas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/8_Treboles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/8_Treboles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/9_Corazones.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/9_Corazones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/9_Diamantes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/9_Diamantes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/9_Picas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/9_Picas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/9_Treboles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/9_Treboles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/A_Corazones.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/A_Corazones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/A_Diamantes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/A_Diamantes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/A_Picas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/A_Picas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/A_Treboles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/A_Treboles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/J_Corazones.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/J_Corazones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/J_Diamantes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/J_Diamantes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/J_Picas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/J_Picas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/J_Treboles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/J_Treboles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/K_Corazones.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/K_Corazones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/K_Diamantes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/K_Diamantes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/K_Picas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/K_Picas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/K_Treboles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/K_Treboles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/Q_Corazones.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/Q_Corazones.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/Q_Diamantes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/Q_Diamantes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/Q_Picas.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/Q_Picas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/Q_Treboles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/Q_Treboles.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/carta_oculta.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/carta_oculta.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/cartas poker.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/cartas poker.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/fondo_casino.avif" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/fondo_casino.avif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/fondo_verde.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/fondo_verde.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/rombospoker.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/rombospoker.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagenes_cartas/sonido_carta.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/imagenes_cartas/sonido_carta.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaz.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/interfaz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jugador2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/jugador2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logocasino.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/logocasino.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/main2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maquina.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/maquina.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maquina2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/maquina2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maximizar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/maximizar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu_casino.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/menu_casino.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minimizar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/minimizar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prueba_usuarios.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/prueba_usuarios.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rojodegradado.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/rojodegradado.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/ui2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuario.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/usuario.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuarios.db" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/usuarios.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ventana.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/ventana.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wins2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Casino github/wins2.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Dennisgs05&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/jesuscanomoya/casino-prog2.git&quot;,
+    &quot;accountId&quot;: &quot;9fefb07c-9a7c-4978-a5aa-42fa7bd6eead&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2gpqieIsD6AocmDC69mXWPxloKH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Grafica_balance.executor": "Run",
+    "Python.ventana.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main2",
+    "last_opened_file_path": "C:/Users/Dennis/OneDrive/Desktop/UNIVERSIDAD/PROGRAMACION 2/casino github",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dennis\OneDrive\Desktop\UNIVERSIDAD\PROGRAMACION 2\casino github" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dennis\OneDrive\Desktop\UNIVERSIDAD\PROGRAMACION 2\casino github\Casino github" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
+        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="934f4f9b-7fee-4115-9261-ee5983fe3ed7" name="Changes" comment="" />
+      <created>1716404994246</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716404994246</updated>
+      <workItem from="1716404995345" duration="238000" />
+      <workItem from="1716405538928" duration="11035000" />
+    </task>
+    <task id="LOCAL-00001" summary="actualizado">
+      <option name="closed" value="true" />
+      <created>1716405165390</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716405165390</updated>
+    </task>
+    <task id="LOCAL-00002" summary="actualizado">
+      <option name="closed" value="true" />
+      <created>1716409519511</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716409519511</updated>
+    </task>
+    <task id="LOCAL-00003" summary="actualizado">
+      <option name="closed" value="true" />
+      <created>1716415525183</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716415525183</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="actualizado" />
+    <option name="LAST_COMMIT_MESSAGE" value="actualizado" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/casino_github$ventana.coverage" NAME="ventana Coverage Results" MODIFIED="1716415214530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/casino_github$Grafica_balance.coverage" NAME="Grafica_balance Coverage Results" MODIFIED="1716407008393" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
