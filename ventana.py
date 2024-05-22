@@ -10,7 +10,10 @@ from usuario import *
 # Creamos la clase para la ventana
 class MainApp(QMainWindow):
     def __init__(self,titulo, parent=None, *args):  # Inicializamos los parámetros
+
         super(MainApp, self).__init__(parent=parent)  # Super_init para obtener la información de la clase QMainWindow
+        self.dni=None
+        self.dinero=None
         self.setWindowTitle('Casino') # Título de página
         self.setWindowIcon(QIcon('Imagenes/icon.jpg'))  # Icono de ventana
         self.setFixedSize(900, 1000)  # Tamaño
@@ -123,12 +126,15 @@ class MainApp(QMainWindow):
             if Usuario.login(DNI, contrasenya) is None or Usuario.login(DNI, contrasenya) is False:
                 self.error_line.show()
             else:
+                self.dni, self.dinero=Usuario.login(DNI, contrasenya)
                 self.hide()
                 #print(Usuario.dni)
             # if not Usuario.login(DNI, contrasenya):
             #     self.error_line.show()
             # else:
             #     self.hide()
+
+
 
     def verificar_usuario_register(self): # Mira que los valores no sean NULL y si no manda los datos a Usuario
         if self.line_username.text() == '' or self.line_password.text() == '' or self.line_apellido.text() == '' or self.line_DNI == '':
@@ -140,6 +146,7 @@ class MainApp(QMainWindow):
             user = Usuario(DNI, nombre, apellidos, contrasenya)
             if user.guardar_en_bd():
                 print("entro")
+                self.dni, self.dinero = user.guardar_en_bd()
                 self.hide()
 
 
