@@ -163,6 +163,7 @@ class MainApp(QMainWindow):
                 self.error_line.show()
                 self.show()
 
+    # Función que verifica que el DNI o NIE introducido sea válido (número de caracteres y letra de confirmación)
     @staticmethod
     def dni_nie_correcto(dni):
         letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X',
